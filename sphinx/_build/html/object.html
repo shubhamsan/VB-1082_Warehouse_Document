@@ -1,0 +1,143 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Objective &#8212; VB#1082_Documentation 1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+    <script type="text/javascript">
+      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
+    </script>
+
+
+  </head><body>
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+
+
+          <div class="body" role="main">
+
+
+   <h1>Objective</h1>
+   <p>The objective of this task is to implement a Warehouse Management System to sort packages based on incoming customer orders from different cities. To achieve this we have done  the following things:</p>
+<ol>
+<li>
+<p>Identify the colour of any 9 packages, three of each colour, on shelf using <code>Camera#1</code>. Either colour detection or QR decoding or combination of both can be used here. </p>
+
+</li>
+<li>
+<p>As the packages are identified the we must update the <code>inventory</code> sheet of <code>Inventory Management Spreadsheet</code> of the warehouse which is a Google Spreadsheet using the <code>ROS- IoT bridge</code> developed by the us in Task 1.</p>
+</li>
+<li>
+<p>After one minute (Sim Time), a total of 9 orders will be published on <code>/eyrc/vb/&lt;unique_id&gt;/orders</code>  MQTT Topic at different intervals. Using <code>ROS-IoT Bridge</code> we need to get the orders from this MQTT Topic.</p>
+<blockquote>
+<p><code>&lt;unique-id&gt;: </code>This is a private ID which will be the eight character string created by the us during Task-1.</p>
+</blockquote>
+
+</li>
+<li>
+<p>In case the <code>UR5#1</code> has multiple orders of different priorities to process, we need to make sure that High Priority orders are processed as quickly as possible, then Medium Priority and then Low Priority orders are processed in order to score maximum points (refer grading section to learn more). Packages of <code>red</code> colour will have <code>High Priority</code> symbolizing Medicines, packages of <code>yellow</code> colour will have a <code>Medium Priority</code> symbolizing Food and packages of <code>green</code> colour have a <code>Low Priority</code> symbolizing Clothes. </p>
+</li>
+<li>
+<p>Once the package is placed on the <code>conveyor belt</code>, we had to update the <code>Orders Dispatched</code> sheet in the <code>Inventory Management Spreadsheet</code> which should give the status of the packages picked up by the <code>UR5#1</code> Arm and send an email notification to the user.</p>
+</li>
+<li>
+<p>Once the <code>conveyor belt</code> takes the packages to <code>UR5#2</code>, the <code>UR5#2</code> Arm then needs to sort the packages based on the colour of the package identified by <code>Camera#1</code>. For eg. Red Package should go in the Red-Bin and so on.</p>
+</li>
+<li>
+<p>As the <code>UR5#2</code> Arm sorts the individual packages into the bins based on package colour, the we will need to update the <code>Orders Shipped</code> sheet of the <code>Warehouse Inventory Mastersheet</code> which should give the status of the packages being picked and dropped in the bins by the <code>UR5#2</code> Arm.</p>
+</li>
+</ol>
+              <li>
+              <p>As the run is progressing, we updated the <a href="https://shubhamsan.github.io/VB-1082_Warehouse_Dashboard/" target="_blank">Warehouse Inventory Dashboard</a> in real time.</p>
+</li>
+
+<h3 id="video">Video</h3>
+<p><iframe height="600px" width="1000px" src="https://youtube.com/embed/fgeqFouwcgQ" allowfullscreen="allowfullscreen"></iframe></p>
+
+
+
+          </div>
+
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">VB#1082_Documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Shubham.
+
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+
+    </div>
+
+
+
+
+  </body>
+</html>
